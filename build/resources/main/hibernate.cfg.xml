@@ -1,0 +1,38 @@
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection setting -->
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="connection.url">jdbc:sqlite:./data/sqlite.db</property>
+        <!-- SQl dialect -->
+        <property name="dialect">org.hibernate.dialect.SQLiteDialect</property>
+        <!-- Create the database schema on startup -->
+<!--        <property name="hbm2ddl.auto">create</property>-->
+        <!-- update the database schema on startup -->
+                <property name="hbm2ddl.auto">update</property>
+        <!-- Show the queries prepared by provider -->
+        <!--        <property name="show_sql">true</property>-->
+        <!-- Names the annotated entity classes -->
+        <!--  here we define mapping class :\ -->
+                <mapping class="models.Cards.Minion" />
+                <mapping class="models.Cards.Mission" />
+                <mapping class="models.Cards.Spell" />
+                <mapping class="models.Cards.Weapon" />
+                <mapping class="models.Cards.Card"/>
+                <mapping class="models.Player.Player"/>
+                <mapping class="Log.Header"/>
+                <mapping class="Log.Log"/>
+<!---->
+        <mapping class="Log.Body"/>
+<!--                <mapping class="CLI.gameCLI"/>-->
+                <mapping class="models.Deck.Deck"/>
+                <mapping class="models.Heroes.Hero"/>
+
+
+        <!--        &lt;!&ndash;        ????????????????????????????????????????????&ndash;&gt;-->
+        <!--        <mapping class="SimpleModel.Unit"/>-->
+        <!--        <mapping class="SimpleModel.Card"/>-->
+
+
+
+    </session-factory>
+</hibernate-configuration>
